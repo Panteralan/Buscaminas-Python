@@ -1,0 +1,36 @@
+Explicación del archivo imprimir_tablero.py
+
+Comenzaremos explicando las primeras 4 lineas:
+
+    print(" ", end=" ")
+    for n in range(len(tablero)):
+        if n>=9:
+            print(str(n + 1), end="")
+        else:
+            print(" " + str(n + 1), end="")
+    print("")
+
+->El primer print(" ", end=" ") coloca un espacio inicial para alinear los números de las columnas con las filas.
+->Luego, en el bucle for n in range(len(tablero)), se imprime el número de cada columna. El índice n comienza en 0, pero se imprime n+1 para que las columnas aparezcan numeradas desde 1.
+->El end="" en el print asegura que todos los números de las columnas se impriman en la misma línea.
+->Finalmente, el print("") hace un salto de línea para comenzar la impresión del contenido del tablero.
+
+->Por estetica del tablero, se puso una condición de if en n>=9 ya que al imprimir tableros muy grandes, las columnas
+desde el número 10 en adelante, no estan alineadas con los numeros del tablero que indican estas posiciónes
+
+    for i in range(len(tablero)):
+        if i>=9:
+            print(str(i + 1), end=" ")
+        else:
+            print(str(i + 1) + " ", end=" ")
+        for j in range(len(tablero[i])):
+            print(tablero[i][j], end=" ")
+        print("")
+
+->El bucle for i in range(len(tablero)) recorre cada fila del tablero.
+->En cada iteración, print(str(i + 1) + " ", end=" ") imprime el número de la fila (comenzando desde 1) seguido de un espacio.
+->El segundo bucle for j in range(len(tablero[i])) recorre las columnas de la fila actual, imprimiendo el contenido de cada celda del tablero con print(tablero[i][j], end=" "). El end=" " asegura que las celdas de una fila se impriman en la misma línea, separadas por un espacio.
+->Después de cada fila, print("") hace un salto de línea para imprimir la siguiente fila.
+
+->Por estetica del tablero, se puso una condicón de if en n>=9 ya que al imprimir tableros muy grandes, las filas 
+desde el número 10 en adelante, no estan alineadas con los números del tablero que indican estas posiciónes.
